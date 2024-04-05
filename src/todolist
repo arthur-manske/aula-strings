@@ -1,0 +1,28 @@
+#!/usr/bin/node
+
+const rl = require(`readline-sync`);
+
+let i; 
+let listaDeTarefas = [];
+
+function safeGetNum(question, min, max)
+{
+	let n = Number(rl.question(question)); 
+	if (isNaN(n) || n < min || n > max) {
+		process.stderr.write("Número inválido digitado. Tente novamente.\n");
+		return safeGetNum(question, min, max);
+	}
+
+	return n;
+}
+
+listaDeTarefas[0] = rl.question("Digite uma tarefa que você tem que fazer durante o dia: "); 
+listaDeTarefas[1] = rl.question("Digite uma tarefa que você tem que fazer durante o dia: "); 
+listaDeTarefas[2] = rl.question("Digite uma tarefa que você tem que fazer durante o dia: "); 
+
+console.log(listaDeTarefas);
+
+listaDeTarefas.splice(safeGetNum(`Digite o indíce da tarefa que já realizou [0-${listaDeTarefas.length - 1}]: `, 0, 3), 1);
+
+console.log(listaDeTarefas);
+

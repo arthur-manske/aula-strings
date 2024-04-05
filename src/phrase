@@ -1,0 +1,8 @@
+#!/usr/bin/node
+
+const rl = require(`readline-sync`);
+
+let string = rl.question(`Digite uma frase: `); 
+let wordsArray = string.trim().split(' ');
+
+console.log(wordsArray);

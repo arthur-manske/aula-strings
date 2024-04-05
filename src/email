@@ -1,0 +1,22 @@
+#!/usr/bin/node
+
+const rl = require(`readline-sync`); 
+
+let userEmail;
+
+let userName  = rl.question("Qual é o seu nome? ").trim();
+
+function getEmail(question)
+{
+	let email = rl.question(question).toLowerCase().trim();
+	/* emails are always lower case, and don't includes spaces or control characters */
+	if (email.includes(" ", "\b", "\t", "\r", "\e", "\a", "\n") || !email.includes("@", ".")) {
+		process.stderr.write("E-mail inválido. Tente novamente.\n");
+		return getEmail(question);
+	}
+	
+	return email;
+}
+
+userEmail = getEmail("Digite o seu e-mail: ");
+console.log(`O e-mail ${userEmail} foi cadastrado com sucesso. Seja bem-vinda(o), ${userName}.`);

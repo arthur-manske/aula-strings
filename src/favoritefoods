@@ -1,0 +1,11 @@
+#!/usr/bin/node
+
+const rl = require(`readline-sync`);   
+
+let favoriteFoods = ["Churrasco", "Massa com carne", "Lasanha", "Pizza", "Hambúrguer"];
+console.log(favoriteFoods); 
+
+console.log(`Essas são as minhas comidas favoritas:\n${favoriteFoods.join('\n')}`);
+
+favoriteFoods[1] = rl.question("Qual é sua comida preferida? ");
+console.log(favoriteFoods);

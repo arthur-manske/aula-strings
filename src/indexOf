@@ -1,0 +1,6 @@
+#!/usr/bin/node
+
+const array = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+
+console.log(array.indexOf("Abacaxi"), array.length);
+
