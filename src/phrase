@@ -3,6 +3,6 @@
 const rl = require(`readline-sync`);
 
 let string = rl.question(`Digite uma frase: `); 
-let wordsArray = string.trim().split(' ');
+let wordsArray = string.trim().split(' ').filter(str => str);
 
 console.log(wordsArray);
